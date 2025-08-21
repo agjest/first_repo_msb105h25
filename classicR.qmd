@@ -100,3 +100,31 @@ df_tib[2, 4]
 df_tib[c(1,3),3]
 ```
 
+```{r}
+class(mtcars)
+```
+
+
+```{r}
+mtcars <- as_tibble(mtcars)
+```
+
+```{r}
+class(mtcars)
+```
+
+```{r}
+rm(mtcars)
+mtcars <- as_tibble(mtcars, rownames = "Model")
+```
+
+```{r}
+#| paged.print: false
+mtcars[mtcars$Model %in% c("Merc 280", "Ferrari Dino", "Merc 450SLC"), names(mtcars) %in% c("Model", "mpg",  "wt")]
+```
+
+```{r}
+#| paged.print: false
+filter(mtcars, mpg < 20)
+```
+
