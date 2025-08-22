@@ -302,4 +302,4 @@ head(cars$speed)
 ```{r}
 head_and_tail(cars$speed, N = 2)
 ```
-hdhbsjda
+
