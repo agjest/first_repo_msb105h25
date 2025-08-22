@@ -128,3 +128,178 @@ mtcars[mtcars$Model %in% c("Merc 280", "Ferrari Dino", "Merc 450SLC"), names(mtc
 filter(mtcars, mpg < 20)
 ```
 
+## Subsets
+
+```{r}
+#| paged.print: false
+# Alt utenom de fire siste
+head(cars, n = -4)
+```
+```{r}
+#| paged.print: false
+# Alt utenom de fire første
+tail(cars, n = -4L)
+```
+
+```{r}
+head(cars)
+```
+
+```{r}
+plot(
+  x = cars$speed,
+  y = cars$dist
+)
+```
+
+```{r}
+plot(
+  x = cars$dist,
+  y = cars$speed
+)
+```
+### Regresjonslinje
+
+```{r}
+plot(cars)
+abline(lm(formula = dist ~ speed, data = cars))
+```
+
+```{r}
+plot(cars)
+lm1 <- lm(formula = dist ~ speed, data = cars)
+abline(lm1)
+```
+
+```{r}
+summary(lm1)
+```
+
+### Regresjon flere forklaringsvariabler
+
+```{r}
+# multiple regression
+# LifeCycleSavings from package Datasets
+mreg1 <- lm(
+  formula = sr ~ pop15 + pop75 + dpi + ddpi, 
+  data = LifeCycleSavings
+  )
+summary(mreg1)
+```
+
+### Stupid func
+
+```{r}
+start_stupid_fun <- function(x1 = 0, n = 10) {
+# initialise x
+x = vector(mode = "numeric", length = n)
+x[1] = x1
+
+for (i in seq_along(x[-1])) {
+  x[i + 1] = x[i] + 1
+}
+print(x)
+}
+
+```
+
+```{r}
+start_stupid_fun()
+```
+
+```{r}
+# probably from jørn
+stupid_fun <- function(
+    x1 = 0, 
+    n = 10, 
+    d = 1, # how much to increase number
+    w = 80, # text width in chacters,
+    width_fraction = 1, # how wide should the output be
+    print_to_console = TRUE # where to send the output
+    ) {
+  # we stop if we are to produce zero numbers
+  # stopifnot(n > 0) an alternative but throws an error
+  # and stop compilation of the document/presentation
+  if(!n > 0) return("n needs to be positive.")
+  # max number of digits in numbers
+  dig =  nchar(n*d)
+  # width in number of charcter for output
+  w_out = w * width_fraction
+  # allocate a numeric vector with room for n numbers
+  x = vector(mode = "numeric", length = n)
+  # First number in output vector is x1
+  x[1] = x1
+  # we loop through x vector but drop first element
+  for (i in seq_along(x[-1])) {
+    # i starts at 1, so first is x1 + d
+    x[i + 1] = x[i] + d
+    }
+# nice trick to control print to console
+if (print_to_console) {
+print(stringr::str_pad(x, width = dig, side = "left", pad = " "),
+      width = w_out)
+  } else {
+    tibble(x)
+  }
+}
+```
+
+```{r}
+#| paged.print: false
+# Generate 33 number starting with -13 and increasing by 5, default width
+stupid_fun(x1 = -13, n = 33, d = 5, w = 30, print_to_console = TRUE)
+```
+
+```{r}
+# probably from jørn
+stupid_fun <- function(
+    x1 = 0, 
+    n = 10, 
+    d = 1
+    ) {
+  x = vector(mode = "numeric", length = n)
+  # First number in output vector is x1
+  x[1] = x1
+  # we loop through x vector but drop first element
+  for (i in seq_along(x[-1])) {
+    # i starts at 1, so first is x1 + d
+    x[i + 1] = x[i] + d
+    }
+x
+}
+```
+
+```{r}
+stupid_fun()
+```
+
+```{r}
+stupid_fun(d = 3)
+```
+
+```{r}
+stupid_fun(d = -3)
+```
+
+```{r}
+stupid_fun(d = 0)
+```
+
+```{r}
+head_and_tail <- function(x, N = 3L) {
+  c(head(x, n = N), tail(x, n = N))
+}
+```
+
+```{r}
+head_and_tail(cars, N = 2)
+```
+
+```{r}
+head(cars$speed)
+```
+
+```{r}
+head_and_tail(cars$speed, N = 2)
+```
+
