@@ -1,0 +1,13 @@
+---
+title: "Untitled"
+format: html
+bibliography: references.bib
+---
+
+## Min Overskrift
+
+@arrow1964 univariate spill har blitt utvidet til et multivariate spill [@levy1991].
+@levy1991 hevder at den store fordelen med denne generaliseringen er at den gir en unik løsning.
+@deschamp1973 mener at …
+
+@fotheringham1983, @bivand2025
