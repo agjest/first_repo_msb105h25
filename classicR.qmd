@@ -303,3 +303,46 @@ head(cars$speed)
 head_and_tail(cars$speed, N = 2)
 ```
 
+
+```{r}
+head_and_tail <- function(x) {
+  c(head(x), tail(x))
+}
+```
+
+```{r}
+head_and_tail(x = cars)
+```
+
+```{r}
+head_and_tail <- function(x, n=3L) {
+res = rbind(rep('Head',length(names(x))),
+        head(x, n = n),
+        rep('*-*-*',length(names(x))), 
+        rep('Tail',length(names(x))), 
+        tail(x, n = n)
+        )
+as_tibble(res)
+}
+```
+
+```{r}
+#| paged.print: false
+head_and_tail(cars)
+```
+
+```{r}
+#| paged.print: false
+head_and_tail(cars, n = 5)
+```
+
+```{r}
+#| paged.print: false
+head_and_tail(mtcars, n = 5)
+```
+
+```{r}
+#| paged.print: false
+head_and_tail(1:30, n = 5)
+```
+
