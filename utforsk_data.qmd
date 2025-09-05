@@ -3,4 +3,63 @@ title: "Utforsk data"
 format: html
 ---
 
-## 
+```{r}
+#| label: setup
+library(tidyverse)
+library(readxl)
+library(writexl)
+library(PxWebApiData)
+```
+
+
+## Leser inn SSB data
+
+```{r}
+ssb10540 <- read_excel("ssb10540.xlsx")
+```
+
+```{r}
+names(ssb10540)
+```
+
+```{r}
+names(ssb10540) <- c("knr", "alder", "mnd", "arbl")
+```
+
+```{r}
+ssb10540 <- fill(ssb10540, knr, alder, .direction = "down")
+```
+
+## Lagre data
+
+```{r}
+x <- 5
+```
+
+```{r}
+save(ssb10540, x, file = "my-fist-data.RData")
+rm(ssb10540, x)
+```
+
+```{r}
+load(file = "my-fist-data.RData")
+```
+
+```{r}
+write_xlsx(
+  x = ssb10540,
+  path = "ssb10540.xlsx"
+)
+```
+
+```{r}
+write_csv(ssb10540, file = "ssb10540,csv")
+```
+
+
+
+```{r}
+#| eval: false
+View(ssb10540)
+```
+

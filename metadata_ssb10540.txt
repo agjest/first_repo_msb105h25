@@ -1,0 +1,52 @@
+10540: Registrerte arbeidsledige (prosent), etter region, alder, måned og statistikkvariabel
+
+
+Tabellene oppdateres kun èn gang i året fra og med 2015. Statistikkmåned november.
+Det er brudd i tidsserien for registrerte ledige fra 2018, og tallene er derfor ikke direkte sammenlignbare med tidligere år. For mer informasjon om bruddet, se: <a href='https://www.nav.no/no/NAV+og+samfunn/Kontakt+NAV/Presse/Pressemeldinger/63+500+helt+ledige+i+desember'>NAV sin uttalelse.</a>
+region:
+"<a href='https://www.ssb.no/offentlig-sektor/kommunekatalog/endringer-i-de-regionale-inndelingene' target='footnote'><b>Se liste over endringer i de regionale inndelingene.</b></a> <br><br>
+<a href='https://www.ssb.no/statbank/hvordan-bruke-statistikkbanken/statistikkbanktabeller-med-sammenslatte-tidsserier' target='footnote'>Tabeller som bruker ny regioninndeling også for årene før 2024.</a>"
+
+region:
+Stavanger:
+1.1.2020 ble kommunene 1141 Finnøy og 1142 Rennesøy innlemmet i 1103 Stavanger.
+
+
+Sist endret:
+Registrert helt arbeidsledige:
+20210127 08:00
+
+Kilde:
+Statistisk sentralbyrå
+
+Kontakt:
+Registrert helt arbeidsledige:
+Berit Mira Rosentjern, Statistisk sentralbyrå
+ +47 21 09 47 90
+ebs@ssb.no
+
+
+
+
+Måleenhet:
+Registrert helt arbeidsledige:
+prosent
+Målemetode:
+Registrert helt arbeidsledige:
+Situasjon (tidspunkt)
+
+Referansetid:
+Registrert helt arbeidsledige
+Utgangen av måneden
+
+
+
+
+
+Offisiell statistikk
+
+Database:
+Ekstern PRODUKSJON
+
+Intern referansekode:
+RegHeltLedige
