@@ -57,9 +57,64 @@ write_csv(ssb10540, file = "ssb10540,csv")
 ```
 
 
-
 ```{r}
 #| eval: false
 View(ssb10540)
+```
+
+## SSB web API
+
+```{r}
+#| paged.print: false
+tmp <- ApiData(
+  "http://data.ssb.no/api/v0/en/table/10540",
+  returnMetaFrames = TRUE
+)
+```
+
+```{r}
+#Get more info about table
+ApiData(
+"http://data.ssb.no/api/v0/en/table/10540",
+returnApiQuery = TRUE
+) 
+```
+
+```{r}
+unemp99to02 <- ApiData12(
+  #urlToData = "https://data.ssb.no/api/v0/en/table/10540/",
+  # or
+  urlToData = "10540",
+  # Select all municipalities in Vest-Agder and Rogaland
+  Region = list(c("10*","11*")),
+  # Select two age groups
+  Alder = c("15-74", "15-29"),
+  # select 1999M01:2002M12
+  Tid = c(paste(
+    rep(1999:2005, each = 12), 
+    "M",
+    sprintf("%02d", 1:12), 
+    sep = "")
+    )
+  ) |> 
+  # convert from dataframe to tibble
+  as_tibble()
+```
+
+```{r}
+ paste(rep(1999:2002, each = 12), "M", sep = "")
+```
+
+```{r}
+sprintf("%02d", 1:12)
+```
+
+```{r}
+c(paste(
+    rep(1999:2002, each = 12), 
+    "M",
+    sprintf("%02d", 1:12), 
+    sep = "")
+    )
 ```
 
