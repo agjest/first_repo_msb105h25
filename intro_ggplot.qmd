@@ -1,0 +1,187 @@
+---
+title: "intro ggplot"
+format: html
+# File must exist, but can be empty
+# give following command in terminal before running:
+# touch ag_test.bib
+bibliography: ag_test.bib
+# include all references in .bib file even if
+# they are not cited.
+nocite: '@*'
+---
+
+```{r}
+#| label: setup
+#| message: false
+library(tidyverse)
+library(ggpubr)
+library(flextable)
+```
+
+
+
+```{r}
+gg1 <- ggplot(data = mtcars, mapping = aes(x = disp, y = mpg)) +
+  geom_point()
+
+gg1
+```
+
+```{r}
+gg2 <-   ggplot(data = mtcars) +
+  geom_point(mapping = aes(x = disp, y = mpg))
+
+gg2
+```
+
+```{r}
+ggarrange(gg1, gg2, labels = c("mapping = aes in ggplot", "mapping = aes in geom_*"),
+          nrow = 1)
+```
+
+```{r}
+#| warning: false
+## combine aes
+gg3 <- ggplot(
+  data = mtcars,
+  mapping = aes(
+  x = disp, 
+  colour= factor(cyl), 
+  shape = factor(abs(am - 1)),
+  size = carb
+  )
+  ) +
+##  geom_point(data = mtcars, mapping = aes(y = mpg), col = 'blue')
+  geom_point(data = mtcars, mapping = aes(y = mpg))
+  
+gg3
+```
+
+```{r}
+#inherit.aes    = FALSE, overrides the default aesthetics, rather than combining with them.
+gg4 <-   ggplot(data =  mtcars, mapping = aes(x = disp, colour = factor(cyl))) +
+##  geom_point(data = mtcars, mapping = aes(y = mpg), colour = 'blue')
+  geom_point(
+    data = mtcars, 
+    mapping = aes(
+      x = qsec, 
+      y = mpg
+      ), 
+    colour = "blue", 
+    show.legend = TRUE, 
+    inherit.aes = TRUE
+    )
+
+gg4
+```
+  @Manual{Kassambara2025,
+    title = {ggpubr: 'ggplot2' Based Publication Ready Plots},
+    author = {Alboukadel Kassambara},
+    year = {2025},
+    note = {R package version 0.6.1},
+    url = {https://CRAN.R-project.org/package=ggpubr},
+    doi = {10.32614/CRAN.package.ggpubr},
+  }
+
+
+```{r}
+# create a bib file for the R packages
+# used in this document
+# Note! Needs to do a touch ag_functions.bib in terminal before first run
+# else stops when bibliography: "ag_functions.bib" not found in YAML
+knitr::write_bib(
+  c(
+    "tidyverse",
+    "ggpubr"
+    ),
+  file = "ag_test.bib"
+  )
+```
+
+```{r}
+#| eval: false
+sI <- sessionInfo()
+# The same, showing the RNGkind, but not the locale :
+print(sI, RNG = TRUE, locale = FALSE)
+```
+
+```{r}
+#| paged.print: false
+sessioninfo::session_info(
+  pkgs = "attached",
+  info = "packages",
+  dependencies = TRUE) |> 
+_$packages |> 
+as_tibble() |> 
+select(package, version = loadedversion, source) |> 
+as_flextable(
+  max_row = 40,
+  show_coltype = FALSE
+  ) %>%
+line_spacing(
+space = 0.3
+) |> 
+delete_part("footer") %>%
+theme_booktabs()
+```
+
+
+
+```{r}
+#| paged.print: false
+sessioninfo::session_info(
+  pkgs = "attached",
+  info = "packages",
+  dependencies = TRUE) %>% 
+.[[1]] |> 
+select(package, loadedversion, date, source) |> 
+as_tibble() %>% 
+as_flextable(
+  max_row = 40,
+  show_coltype = FALSE
+  ) %>%
+line_spacing(
+space = 0.3
+) |> 
+delete_part("footer") %>%
+theme_booktabs()
+```
+
+```{r}
+#| paged.print: false
+sessioninfo::platform_info() |> 
+as_tibble() %>% 
+as_flextable(
+  max_row = 40,
+  show_coltype = FALSE
+  ) %>%
+line_spacing(
+space = 0.3
+) |> 
+delete_part("footer") %>%
+autofit() |> 
+theme_booktabs()
+```
+
+```{r}
+#| paged.print: false
+sessioninfo::external_info() |> 
+as_tibble() %>% 
+as_flextable(
+  max_row = 40,
+  show_coltype = FALSE
+  ) %>%
+line_spacing(
+space = 0.3
+) |> 
+line_spacing(
+i = 16,
+space = 0.8
+) |> 
+delete_part("footer") %>%
+theme_booktabs()
+```
+
+
+
+
