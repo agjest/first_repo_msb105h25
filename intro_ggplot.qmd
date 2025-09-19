@@ -16,6 +16,7 @@ nocite: '@*'
 library(tidyverse)
 library(ggpubr)
 library(flextable)
+library(gridExtra)
 ```
 
 
@@ -74,14 +75,253 @@ gg4 <-   ggplot(data =  mtcars, mapping = aes(x = disp, colour = factor(cyl))) +
 
 gg4
 ```
-  @Manual{Kassambara2025,
-    title = {ggpubr: 'ggplot2' Based Publication Ready Plots},
-    author = {Alboukadel Kassambara},
-    year = {2025},
-    note = {R package version 0.6.1},
-    url = {https://CRAN.R-project.org/package=ggpubr},
-    doi = {10.32614/CRAN.package.ggpubr},
-  }
+
+```{r}
+ggplot() +
+  geom_point(data = mtcars,
+             mapping = aes(x = disp, y = mpg, colour = factor(cyl), size = 3.6*(0.25*1609.347)/qsec,
+                           shape = factor(ifelse(am, "Man", "Aut"))), alpha = 0.6) +
+  labs(colour = "cyl", size = "speed\n(km/h)", shape = "trans-\nmission")
+```
+
+```{r}
+#| message: false
+ggplot(
+  mapping = aes(x = disp, y = mpg),
+  data = mtcars
+  ) +
+  geom_point(
+    mapping = aes(
+      colour = factor(cyl), 
+      size = 3.6*(0.25*1609.347)/qsec, 
+      shape = factor(
+        # Note codeing am
+        # 0 automatic, 1 manual
+        ifelse(
+          am == 0, 
+          "Aut", 
+          "Man"
+          )
+        )
+      )
+    ) +
+  labs(
+    colour = "cyl", 
+    size = "speed\n(km/h)", 
+    shape = "trans-\nmission"
+    ) +
+  geom_smooth(method = "lm", se = FALSE, colour = "black", linewidth = 1.25) +
+  geom_smooth(method = MASS::rlm, se = FALSE, colour = "red", linewidth = 1.25)
+```
+
+```{r}
+df_mean <- mtcars |> 
+  group_by(cyl) |> 
+  summarise(
+    mpg = mean(mpg),
+    disp = mean(disp)
+  ) |> 
+  mutate(
+    cyl = c("avg. car 4 cyl.", 
+            "avg. car 6 cyl.", "avg. car 8 cyl.")
+  )
+```
+
+
+```{r}
+#| message: false
+ggplot(
+  data = mtcars, 
+  mapping = aes(x = disp, y = mpg)
+  ) +
+  geom_point(
+    mapping = aes(colour = factor(cyl))
+    ) +
+  geom_smooth(
+    method = "lm", 
+    se = FALSE
+    ) +
+  geom_smooth(
+    method = MASS::rlm, 
+    colour = 'Red', 
+    se = FALSE
+    ) +
+  geom_point(
+    data = df_mean, 
+    colour = "black", 
+    size = 3
+    ) +
+  geom_text(
+    data = df_mean, 
+    mapping = aes(label = cyl), 
+    colour = "black", 
+    vjust = 1.5
+    )
+```
+
+```{r}
+ggplot(
+  data = mtcars, 
+  mapping = aes(
+    x = hp, 
+    y = 1609.347/(2*qsec^2),
+    colour = cut_number(
+      wt, 
+      n = 3)
+    )
+  ) +
+  facet_wrap(~cut_number(wt, n =3)) +
+  geom_point() +
+  geom_smooth(
+    method = "lm", 
+    se = FALSE
+    )
+```
+
+```{r}
+#new dataframe to use for the grey points
+hp_acc <- data.frame(
+  hp = mtcars$hp, 
+  acc = 1609.347/(2*mtcars$qsec^2)
+  )
+
+ggplot(
+  data = mtcars, 
+  mapping = aes(
+    x = hp, 
+    y = 1609.347/(2*qsec^2),
+    colour = cut_number(
+      wt, 
+      n = 3, 
+      labels = c("Light", "Medium", "Heavy")
+      )
+    )
+  ) +
+  geom_point(
+    mapping = aes(
+    x = hp, 
+    y = 1609.347/(2*qsec^2)
+    ),
+    colour = "grey80",
+    inherit.aes = FALSE
+    ) +
+  facet_wrap(
+    ~cut_number(
+      wt, 
+      n =3 , 
+      labels = c("Light", "Medium", "Heavy")
+      )
+    ) +
+  geom_point() +
+  geom_smooth(
+    method = "lm", 
+    se = FALSE
+    ) +
+  labs(
+    y = "Mean acceleration (m/s^2)", 
+    colour = "Weight"
+    )
+```
+
+
+```{r}
+#| message: false
+#new dataframe to use for the grey points
+hp_acc <- data.frame(
+  hp = mtcars$hp, 
+  acc = 1609.347/(2*mtcars$qsec^2)
+  )
+
+#new dataframe to use for the grey points
+hp_acc <- data.frame(
+  hp = mtcars$hp, 
+  acc = 1609.347/(2*mtcars$qsec^2)
+  )
+
+mtcars |> 
+  arrange(cyl) |> 
+  mutate(
+    cyl = fct(as.character(cyl))
+  ) |> 
+ggplot(
+  mapping = aes(x = hp, y = 1609.347/(2*qsec^2))
+  ) +
+  geom_point(
+    data = hp_acc, 
+    mapping = aes(x = hp, y = acc), colour = "grey80"
+    ) +
+  facet_wrap(
+    ~cut_number(
+      wt, 
+      n =3 , 
+      labels = c("Light", "Medium", "Heavy")
+      )
+    ) +
+  geom_point(
+    mapping = aes(colour = cut_number(
+      wt, 
+      n = 3, 
+      labels = c("Light", "Medium", "Heavy")
+      )
+      ),
+    show.legend = FALSE
+    ) +
+  geom_smooth(
+    method = "lm", 
+    se = FALSE
+    ) +
+  labs(
+    y = "Mean acceleration (m/s^2)", 
+    colour = "Weight"
+    )
+```
+
+```{r}
+ggplot(
+  data = mtcars, 
+  mapping = aes(x = hp, y = 1609.347/(2*qsec^2))
+  ) +
+  geom_point(
+    data = hp_acc, 
+    mapping = aes(x = hp, y = acc), 
+    colour = "grey80"
+    ) +
+  facet_grid(
+    factor(cyl)~cut_number(
+      wt, 
+      n =3 , 
+      labels = c("Light", "Medium", "Heavy"))
+    ) +
+  geom_point(
+    mapping = aes(
+      colour = cut_number(
+        wt, 
+        n = 3, 
+        labels = c("Light", "Medium", "Heavy")
+        )
+      ),
+    show.legend = FALSE
+    ) +
+  geom_smooth(
+    method = "lm", 
+    se = FALSE
+    ) +
+  labs(
+    y = "Mean acceleration", 
+    colour = "Weight"
+    )
+```
+
+
+## Citing R and packages
+
+```{r}
+citation()
+```
+
+```{r}
+citation("tidyverse")
+```
 
 
 ```{r}
@@ -97,6 +337,9 @@ knitr::write_bib(
   file = "ag_test.bib"
   )
 ```
+
+## Report sessionInfo()
+
 
 ```{r}
 #| eval: false

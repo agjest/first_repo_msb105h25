@@ -1,0 +1,31 @@
+---
+title: "Transform Data"
+format: html
+---
+
+```{r}
+#| label: setup
+library(nycflights13)
+```
+
+
+```{r}
+set.seed(1234)
+res_mean_rnorm_3dig_string <- 
+  rnorm(n = 10, mean = 0, sd = 1) %>%
+  mean() %>%
+  round(digits = 3) %>% 
+  # The dot '.' is to show where the content of the pipe should be put
+  paste("Result:", .)
+res_mean_rnorm_3dig_string
+```
+
+```{r}
+flights %>% dim()
+```
+
+```{r}
+#| paged.print: false
+flights %>% as_tibble()
+```
+
