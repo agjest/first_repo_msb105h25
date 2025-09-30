@@ -347,14 +347,5 @@ names(flights)
 ```
 
 
-```{r}
-flights %>%
-  filter(month %in% c(2, 9)) |> 
-  group_by(month, carrier) |> 
-  summarise(
-    mean_delay = mean(arr_delay, na.rm = TRUE),
-    sd_delay = sd(arr_delay, na.rm = TRUE)
-    ) |> 
-  print(n = 60)
-```
+
 
