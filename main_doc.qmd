@@ -13,7 +13,7 @@ bibliography: references.bib
 
 [New sentences at start of introduction. Should not give any conflicts.]{style="background-color:chartreuse;"}
 Cum magnis dis parturient montes, nascetur ridiculus mus.
-Donec [nulla auctor ullam]{style="background-color:chartreuse;"}fringilla.
+Donec [ullam]{style="background-color:chartreuse;"}fringilla.
 [Fusce dapibus, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus tellus ac cursus commodo, tortor mauris condimentum nibh,ac facilisis in, egestas eget quam.]{style="background-color:chartreuse;"}
 Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
 Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
@@ -21,10 +21,9 @@ Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 
 ## Discussion
 
-Aenean lacinia bibendum nulla sed consectetur.
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-Maecenas faucibus mollis interdum.
+[Aenean lacinia bibendum nulla sed consectetur.]{style="background-color:chartreuse;"}
+Cum sociis natoque penatibus et nascetur ridiculus mus.
+[Praesent commodo cursus magna, maecenas faucibus mollis interdum, vel scelerisque nisl consectetur et.]{style="background-color:chartreuse;"}
 Aenean lacinia bibendum nulla sed consectetur.
 Donec ullamcorper nulla non metus auctor fringilla.
 Cras mattis consectetur purus sit amet fermentum.
