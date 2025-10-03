@@ -11,10 +11,10 @@ bibliography: references.bib
 
 ## Introduction
 
-New sentences at start[DELETED]{style="background-color:red;"} Should not give any conflicts [at first]{style="background-color:red;"}.
-Cum SOME EDIT IN 3.
-SENTENCE magnis dis parturient montes, nascetur ridiculus mus.
-Donec ullamcorper nulla AND ALSO HERE auctor fringilla.
+Should not give [any conflicts at first]{style="background-color:green;"}.
+Magnis dis parturient montes, nascetur ridiculus mus.
+Donec ullamcorper nulla [AND]{style="background-color:green;"}.
+auctor fringilla.
 Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 Cras justo odio, dapibus ac facilisis in, egestas eget quam.
 Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
@@ -24,12 +24,11 @@ Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 ## Discussion
 
 Aenean lacinia bibendum nulla sed consectetur.
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-[EDITS ON MAIN_DOC IN CONFLICTS BRANCH Prae commudo cursus magnat]{style="background-color:red;"}, vel scelerisque nisl consectetur et.
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Prae [magnat]{style="background-color:green;"}, vel scelerisque nisl consectetur et.
 Maecenas faucibus mollis interdum.
 Aenean lacinia bibendum nulla sed consectetur.
 Donec ullamcorper nulla non metus auctor fringilla.
-[Cras mattis purus sit amet fermentum.]{style="background-color:red;"}
+Cras mattis purus sit amet [fermen]{style="background-color:green;"}
 
 ## Conclusion
 
@@ -38,4 +37,4 @@ Aenean eu leo quam.
 Pellentesque ornare sem lacinia quam venenatis vestibulum.
 Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 Maecenas sed diam eget risus varius blandit sit amet non magna.
-[DELETED]{style="background-color:red;"}
+
