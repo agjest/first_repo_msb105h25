@@ -11,20 +11,32 @@ bibliography: references.bib
 
 ## Introduction
 
+<<<<<<< HEAD
 New sentences at start[DELETED]{style="background-color:red;"} Should not give any conflicts [at first]{style="background-color:red;"}.
 Cum SOME EDIT IN 3.
 [LAST EDIT BEFORE MERGING]{style="background-color:red;"} Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+=======
+[New sentences at start of introduction. Should not give any conflicts.]{style="background-color:chartreuse;"}
+Cum magnis dis parturient montes, nascetur ridiculus mus.
+Donec [ullam]{style="background-color:chartreuse;"}fringilla.
+[Fusce dapibus, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus tellus ac cursus commodo, tortor mauris condimentum nibh,ac facilisis in, egestas eget quam.]{style="background-color:chartreuse;"}
+>>>>>>> b1
 Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+Morbi leo risus, porta ac consectetur ac,[EDITS b1 v3]{style="background-color:chartreuse;"} Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 
 ## Discussion
 
+<<<<<<< HEAD
 Aenean lacinia bibendum nulla sed consectetur.
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 [EDITS ON MAIN_DOC IN CONFLICTS BRANCH Prae commudo cursus magnat]{style="background-color:red;"}, vel scelerisque nisl consectetur et.
 Maecenas faucibus mollis interdum.
+=======
+[Aenean lacinia bibendum nulla sed consectetur.]{style="background-color:chartreuse;"}
+Cum sociis natoque penatibus et nascetur ridiculus mus.
+[Praesent commodo cursus magna, maecenas faucibus mollis interdum, vel scelerisque nisl consectetur et.]{style="background-color:chartreuse;"}
+>>>>>>> b1
 Aenean lacinia bibendum nulla sed consectetur.
 Donec ullamcorper nulla non metus auctor fringilla.
 [Cras mattis purus sit amet fermentum.]{style="background-color:red;"}
