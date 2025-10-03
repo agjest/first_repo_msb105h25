@@ -11,41 +11,44 @@ bibliography: references.bib
 
 ## Introduction
 
-<<<<<<< HEAD
 New sentences at start[DELETED]{style="background-color:red;"} Should not give any conflicts [at first]{style="background-color:red;"}.
 Cum SOME EDIT IN 3.
-[LAST EDIT BEFORE MERGING]{style="background-color:red;"} Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-=======
+[LAST EDIT BEFORE MERGING]{style="background-color:red;"} Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut.
+Should not give [any]{style="background-color:green;"}.
+Magnis dis parturient montes, nascetur ridiculus mus.
+Donec ullamcorper nulla [AND]{style="background-color:green;"}.
+auctor fringilla.
+Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+
+Cras justo odio, dapibus ac facilisis in,
+
 [New sentences at start of introduction. Should not give any conflicts.]{style="background-color:chartreuse;"}
 Cum magnis dis parturient montes, nascetur ridiculus mus.
 Donec [ullam]{style="background-color:chartreuse;"}fringilla.
 [Fusce dapibus, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus tellus ac cursus commodo, tortor mauris condimentum nibh,ac facilisis in, egestas eget quam.]{style="background-color:chartreuse;"}
->>>>>>> b1
+
 Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
 Morbi leo risus, porta ac consectetur ac,[EDITS b1 v3]{style="background-color:chartreuse;"} Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 
 ## Discussion
 
-<<<<<<< HEAD
 Aenean lacinia bibendum nulla sed consectetur.
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-[EDITS ON MAIN_DOC IN CONFLICTS BRANCH Prae commudo cursus magnat]{style="background-color:red;"}, vel scelerisque nisl consectetur et.
-Maecenas faucibus mollis interdum.
-=======
+
 [Aenean lacinia bibendum nulla sed consectetur.]{style="background-color:chartreuse;"}
 Cum sociis natoque penatibus et nascetur ridiculus mus.
 [Praesent commodo cursus magna, maecenas faucibus mollis interdum, vel scelerisque nisl consectetur et.]{style="background-color:chartreuse;"}
->>>>>>> b1
+
 Aenean lacinia bibendum nulla sed consectetur.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Prae [magnat]{style="background-color:green;"}, vel scelerisque nisl consectetur et.[DEL]{style="background-color:green;"}.
+
 Donec ullamcorper nulla non metus auctor fringilla.
-[Cras mattis purus sit amet fermentum.]{style="background-color:red;"}
+Cras mattis purus sit amet
 
 ## Conclusion
 
 Vestibulum id ligula porta felis euismod semper.
-Aenean eu leo quam.
-Pellentesque ornare sem lacinia quam venenatis vestibulum.
+Aenean eu leo quam.[fermen]{style="background-color:green;"} Pellentesque ornare sem lacinia quam venenatis vestibulum.
 Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 Maecenas sed diam eget risus varius blandit sit amet non magna.
-[DELETED]{style="background-color:red;"}
+
