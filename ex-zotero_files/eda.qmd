@@ -1,0 +1,151 @@
+---
+title: "EDA"
+format: html
+editor: visual
+---
+
+```{r}
+#| message: false
+#| label: setup
+library(tidyverse)
+library(vtable)
+library(flextable)
+```
+
+## EDA
+
+```{r}
+heights <- modelr::heights
+```
+
+
+```{r}
+#| label: tbl-descStat
+#| tbl-cap: Descriptive statistics for the heights dataset.
+#| paged.print: false
+# package vtable 
+# must be installed
+heights %>% 
+  select(
+    -marital, 
+    -sex
+    ) %>% 
+  # . to stop RStudio 
+  # complaining about 
+  # no data
+  vtable::st(data = ., out = "return") |> 
+  as_flextable(
+    show_coltype = FALSE,
+    max_row = 20
+  ) |> 
+  line_spacing(space = 0.3) |>
+  delete_part("footer") |>
+  theme_booktabs()
+```
+
+As seen in @tbl-descStat bla bla
+
+
+```{r}
+#| paged.print: false
+# NAs in my_heights?
+heights %>% 
+  apply(MARGIN = 2, FUN = is.na) %>% 
+  apply(MARGIN = 2, FUN = sum) |> 
+  print(width = 40)
+```
+
+```{r}
+#| paged.print: false
+# NAs in my_heights?
+heights %>% 
+  is.na() %>%
+  apply(MARGIN = 2, FUN = sum)  |> 
+  print(width = 40)
+```
+
+```{r}
+#| paged.print: false
+# package vtable 
+# must be installed
+heights <- modelr::heights
+
+tab1 <- heights %>% 
+  select(
+    -marital, 
+    -sex
+    ) %>% 
+  vtable::st(out = "return") |> 
+  as_flextable(
+    show_coltype = FALSE,
+    max_rows = 20
+  ) |> 
+  line_spacing(space = 0.3) |> 
+  autofit() |> 
+  delete_part("footer") |> 
+  theme_booktabs() |> 
+  bg(i = 6, j = c(5,8), bg = "yellow")
+
+tab1
+```
+
+```{r}
+tab1 |> 
+  bg(i = 3, j = c(2,4), bg = "red")
+```
+
+```{r}
+heights %>% 
+  select(
+    -sex
+  ) |> 
+  vtable::st(out = "return") |> 
+  as_flextable(
+    show_coltype = FALSE,
+    max_rows = 40
+  ) |> 
+  line_spacing(space = 0.3) |> 
+  autofit() |> 
+  delete_part("footer") |> 
+  theme_booktabs() 
+```
+
+
+```{r}
+# package vtable must 
+# be installed
+heights %>% 
+  select(marital, sex) %>% 
+  vtable::st(
+    data = ., 
+    out = "return"
+    ) |> 
+  as_flextable(
+    show_coltype = FALSE,
+    max_row = 20
+  ) |> 
+  line_spacing(space = 0.3) |> 
+  delete_part("footer")
+```
+
+```{r}
+#| paged.print: false
+# Default for ft_max_row is 10
+# so just first 10 lines will
+# be printed
+heights %>% 
+  select(-sex) %>% 
+  vtable::st(
+    group = 'marital',
+    group.long = TRUE,
+    out = "return"
+    )  |> 
+  as_flextable(
+    show_coltype = FALSE,
+    max_row = 60
+  ) |> 
+  line_spacing(space = 0.3) |> 
+  delete_part("footer") |> 
+  theme_booktabs()
+```
+

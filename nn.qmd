@@ -1,0 +1,37 @@
+---
+title: "Nynorsk"
+lang: NO_nn
+papersize: a5
+fontsize: 16pt
+format:
+    html: default
+    typst:
+      output-file: "nn_Typst"
+      output-ext:  "pdf"
+    docx: default
+    pdf: 
+      output-file: "nn_Tex"
+      output-ext:  "pdf"
+abstract: "Dette er berre eit lite samandrag."
+---
+
+Kan eg no skrive nynorsk? Dømetekst henta frå nettsidene til Språkrådet. Sett med 16 punkt tekst på a5 ark for å få mange orddelingar.
+
+## Det skal ikkje meir til enn eit lite snøfall før byfolket er ute på glattisen
+
+– Hjelp! 
+Ei eldre dame med rullator står midt i svingen nedanfor der vi bur. Knea klaprar mot kvarandre, som ein nyfødd kalv står ho der, ho kjem ingen veg, verken att eller fram, beina skjelv, skjøret blafrar, og underlaget er såpe. Eg hjelper den gamle over gata og seier at ho ikkje må gå ut på slikt føre, men kva skal ein stakkar gjere når kaffiboksen er tom og kommunen ikkje akkurat renn ned dørene?
+
+Langs gata stikk bakenden på bilane ut, det er uråd å få til ei anstendig parkering, sinte menn med raude ansikt rusar bilane og blå fingrar skrapar is. Nede på hovudvegen ligg det tre bilar i grøfta. Eg går midt i vegen med barnevogna, drosjesjåførane hyttar med neven og bussen tutar, det er kaos, det er Oslo, det er vinterlandet, johoo, vi som er fødde med ski på beina!
+
+Det er det same kvar einaste gong. Meteorologane har vifta med pinnen, kika åtvarande på oss frå fjernsynet og sagt at det kjem. Vi lærer aldri. Kvar einaste gong står hovudstadsinnbyggjarane der og spinn og måkar, måkar og spinn, klagar og jamrar og hufsar og vassar, kva er dette, kva kan det vere, dette kvite teppet som kjem frå himmelen, hjelpeogtrøste, slik var det ikkje eingong i nittenfemtito! 
+
+Det er utruleg fascinerande å sjå kor overraska nordmenn kan verte av at nedbør faktisk kan falle som anna enn regn. Enkelte kunne ikkje ha vore meir overraska om dei hadde drege vekk gardinene og landet hadde vorte dekt av marsipan. Og nyheitssendingane vert fylt av kaos, tilgje oss, alle de nesten fire millionar nordmenn som ikkje bur i Oslo, men de berre må sjå på kor hjelpelause vi er, i sending etter sending, same maset år etter år. Det er verken vett i panna eller stål i bein og armar. Snøen burde halde seg i Skomakargata eller i det minste på Svalbard!
+
+Eg må berre vedgå det; eg nyt det. Eg synest det er urkomisk. Det minner meg om den britiske ballettlærarinna mi som ikkje møtte opp til undervisning fordi det hadde kome sju centimeter snø. Ho rekna med at alt var avlyst. At bussane ikkje gjekk. At skuleungane sat heime. At butikken var stengd. Ho hadde endåtil opna naud-hermetikken ho hadde med seg frå Storbritannia, i tilfelle ho vart innesnødd. No har det jammen vorte slik blant nordmenn også! Her har kreative sjeler ei god muligheit for å tene store pengar. Naudrasjonar som kan lagrast i tilfelle snøfnugg. Eller kva med ”vi børstar av bilen din”-service? Her kunne kjekke handymenn reist rundt og måka, varma opp bilkupear og skrapa frontruter klokka sju om morgonen. For no har det vorte eit ork og eit slit og ein unntakstilstand.
+
+– Kva er det du gliser slik for, bjeffa naboen, då eg kom litt svett, trillande med handleposar på slep. Han lurer på om det ikkje er tungt. – Jau, må eg medgå, det er tungt, men vi treng då trimmen, smiler eg, han synest eg er ein sadist. Byen er kvit og vakker og ungane hyler av fryd. Eg lagar ein engel i snøen i parken medan forbipasserande ser olmt på meg og lurer på om det er ironisk meint, eller om eg kanskje er ein slik kunstnar som gjer slikt berre for å sjå på reaksjonane.
+
+Vintergleda finn eg i skiløypa. Ikkje av siklande nordmenn i kjekke trikotar med pulsklokke, men av eit par utlendingar på tydeleg lånte ski. Kjærastparet i altfor store grilldressar og polvottar har raude kinn og skrattar medan dei stavrar seg avgarde, som små born som tek sine fyrste, vaklande skritt. – Før beina, ikkje tramp, seier guten, jenta sklir baklengs og veivar med armane, ein trikot-tass kjem susande og sender eit irritert blikk mot desse sinkene som sperrar sporet, dei ensar han ikkje, dei er i si eiga verd, dei har ikkje eingong sett meg som smugkikar frå den blå swixen, det er vinterglede, den aller første turen med ski, det er magisk og det skjer i Oslo, i løypene, i vintrelandet.
+
+Eg pakkkar inn jenta mi på åtte månader og set kursen mot lavande tre. I det ho ser pulken, set ho i eit kvin og viftar med armane, no er det tur, vi skal suse avgarde. Så får dei andre jamre seg alt dei vil. For vi må nyte det. Den vakraste vinteren i manns minne. Her. No.
