@@ -49,6 +49,8 @@ andre studier.
 
 @knuth1984 er en sitering.
 
+## Konklusjon
+
 ## Referanser
 
 ::: {#refs}
