@@ -1,6 +1,9 @@
 ---
 title: "Nynorsk"
+bibliography: nn.bib
+bibliographystyle: apa-HVL-7-nn
 lang: NO_nn
+citeproc: true
 papersize: a5
 fontsize: 16pt
 format:
@@ -15,7 +18,7 @@ format:
 abstract: "Dette er berre eit lite samandrag."
 ---
 
-Kan eg no skrive nynorsk? Dømetekst henta frå nettsidene til Språkrådet. Sett med 16 punkt tekst på a5 ark for å få mange orddelingar.
+Kan eg no skrive nynorsk? Dømetekst henta frå nettsidene `https://www.norsksidene.no/` [@Eksempeltekst2025]. Sett med 16 punkt tekst på a5 ark for å få mange orddelingar. 
 
 ## Det skal ikkje meir til enn eit lite snøfall før byfolket er ute på glattisen
 
@@ -35,3 +38,5 @@ Eg må berre vedgå det; eg nyt det. Eg synest det er urkomisk. Det minner meg o
 Vintergleda finn eg i skiløypa. Ikkje av siklande nordmenn i kjekke trikotar med pulsklokke, men av eit par utlendingar på tydeleg lånte ski. Kjærastparet i altfor store grilldressar og polvottar har raude kinn og skrattar medan dei stavrar seg avgarde, som små born som tek sine fyrste, vaklande skritt. – Før beina, ikkje tramp, seier guten, jenta sklir baklengs og veivar med armane, ein trikot-tass kjem susande og sender eit irritert blikk mot desse sinkene som sperrar sporet, dei ensar han ikkje, dei er i si eiga verd, dei har ikkje eingong sett meg som smugkikar frå den blå swixen, det er vinterglede, den aller første turen med ski, det er magisk og det skjer i Oslo, i løypene, i vintrelandet.
 
 Eg pakkkar inn jenta mi på åtte månader og set kursen mot lavande tre. I det ho ser pulken, set ho i eit kvin og viftar med armane, no er det tur, vi skal suse avgarde. Så får dei andre jamre seg alt dei vil. For vi må nyte det. Den vakraste vinteren i manns minne. Her. No.
+
+## Referansar

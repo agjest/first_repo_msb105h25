@@ -1,0 +1,59 @@
+---
+title: "Assignment 2 msb105 Data Science"
+lang: NO_nb
+format: 
+  html: default
+  typst:
+    papersize: a4
+---
+
+## Formålene
+
+1.  Skrive en presentasjon i Quarto. Varighet ca. 10 minutter. Grupper og oppgaven til hver gruppe er spesifisert lenger nede i dokumentet.
+2.  Skrive i norsk språkdrakt (YAML `lang: NO_nb` og `csl: hvl_apa7_stil_bokmal_v1.csl`\` eller `lang: NO_nn` og `csl: hvl_apa7_stil_nynorsk_v1.csl`\`)
+    1.  Installere `tinytex` hvis dette ikke alt er gjort:
+        1.  Installer først pakken `tinytex`\`.
+        2.  Kjør så funksjonen `tinytex::install_tinytex()` i R Console.
+        3.  KJør så `tinytex::tlmgr_install("hyphen-norwegian")` for å bygge nytt latex format som har norske orddelingsregler.
+        4.  Da skal man kunne generere pdf-filer med norsk språk og ordeling via LaTeX.
+3.  Samarbeide vha. git og Github.
+    1.  Disse presentasjonsfilene vil være relativt små og enkle. Passer derfor godt for første forsøk på å synkronisere arbeid vha. Github.
+        1.  Hver deltaker sin gren og `merge` mot Github
+        2.  Flere `commits` i hver gren
+        3.  Flere `merge` av grener inn mot `main`.
+4.  Trene litt på enkel EDA vha. beskrivende statistikk i tabeller og undersøking av fordelingen til variabler (histogram, fiolinplot etc.) og samvariasjon mellom variabler («scatter-plots», korrelasjoner (`pairs()) etc.)`
+
+## Grupper og oppgave
+
+Alle grupper bør lese [denne](https://www.researchgate.net/publication/8545837_The_Effect_of_Physical_Height_on_Workplace_Success_and_Income_Preliminary_Test_of_a_Theoretical_Model/link/00b495390a8394aea7000000/download) (Velg Judge.pdf).
+Datasettet vi bruker er `modelr::heights`.
+
+### Gruppe 1
+
+Amanda Wessel Skaar og Henriette Hausken Kjærandsen.
+
+Oppgave: Hvilke sammenhenger har vi mellom inntekt, kjønn og høyde?
+
+### Gruppe 2
+
+Antonio Isa Jakobsen og Kristoffer Tufta
+
+Oppgave: Hvilke sammenhenger har vi mellom inntekt, kjønn og utdanning?
+
+### Gruppe 3
+
+Ivan Stordal og Irjan Ananiassen Vikre 
+
+Oppgave: Hvilke sammenhenger har vi mellom inntekt, kjønn og bmi (Body Mass Index)?
+
+### Gruppe 4
+
+Frida Alendal (frida3208@hvl.no), Katinca Beate Haavardstun Valvatne (593326@stud.hvl.no) og Karin Liang (kalia2193@hvl.no)
+
+Oppgave: Hvilke sammenhenger har vi mellom inntekt, alder, kjønn og sivilstatus («marital»)?
+
+### Gruppe 5
+
+Magnus Sandstrak Eidesmo (maeid7358@hvl.no) og Harald Bjarne Vika (havik3164@hvl.no)
+
+Oppgave: Hvilke sammenhenger har vi mellom inntekt, kjønn og evnenivå («afqt»)?
