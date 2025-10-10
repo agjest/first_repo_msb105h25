@@ -21,6 +21,7 @@ format:
     footer: "Presentasjon «Assignment 2» msb105"
     fig-width: 7
   pptx: default
+  html: default
   typst:
     papersize: a4
   pdf:
