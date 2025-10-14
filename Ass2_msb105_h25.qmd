@@ -26,7 +26,9 @@ format:
 ## Grupper og oppgave
 
 Alle grupper bør lese [denne](https://www.researchgate.net/publication/8545837_The_Effect_of_Physical_Height_on_Workplace_Success_and_Income_Preliminary_Test_of_a_Theoretical_Model/link/00b495390a8394aea7000000/download) (Velg Judge.pdf).
-Datasettet vi bruker er `modelr::heights`.
+Datasettet vi bruker er `modelr::heights`. I filen [mal_presentasjon](https://github.com/agjest/first_repo_msb105h25/blob/main/mal_presentasjon.qmd) finner dere tips om disposisjon.
+
+Vi ble enige om å ha seminaret tirsdag 21. oktober kl. 12:15-14:00. For dem som ikke har anledning til å være fysisk tilsted får vi prøve å organisere et simultant Zoom møte.
 
 ### Gruppe 1
 
