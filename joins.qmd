@@ -1,0 +1,55 @@
+---
+title: "Joins"
+format: html
+editor: visual
+---
+
+## Joins
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(nycflights13)
+```
+
+
+```{r}
+flights <- nycflights13::flights 
+
+flights <- flights%>% 
+  left_join(
+    y = airlines, 
+    by = join_by("carrier" == "carrier")
+    )
+
+flights %>% 
+  select(carrier, name, everything()) %>% 
+  head(3)
+```
+
+```{r}
+names(flights)
+```
+
+```{r}
+names(planes)
+```
+
+```{r}
+nmf <- names(flights)
+nmf[nmf %in% names(planes)]
+```
+
+```{r}
+setdiff(names(flights), names(planes))
+```
+
+```{r}
+setdiff(names(planes), names(flights))
+```
+
+```{r}
+intersect(names(planes), names(flights))
+```
+
+

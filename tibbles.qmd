@@ -1,0 +1,430 @@
+---
+title: "Tibbles"
+format: html
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+options(
+  paged.print = FALSE,
+  width = 40
+  )
+```
+
+```{r}
+mtcars
+```
+
+```{r}
+mtcars_tib <- mtcars |> 
+  as_tibble()
+```
+
+```{r}
+mtcars |> 
+  _[c("hp", "wt")] |> 
+  head(n = 5)
+```
+
+```{r}
+mtcars %>% 
+  .[c("hp", "wt")] |> 
+  head(n = 5)
+```
+
+```{r}
+mtcars %>% 
+  .[["hp"]] |> 
+  head(n = 5)  |> 
+  class()
+```
+
+```{r}
+mtcars %>% 
+  .[["hp"]] |> 
+  head(n = 5) |> 
+  dim()
+```
+
+```{r}
+mtcars %>% 
+  .[["hp"]] |> 
+  head(n = 5) |> 
+  length()
+```
+
+```{r}
+mtcars %>% 
+  as_tibble() %>%
+  .["hp"] |> 
+  head(n = 1) |> 
+  dim()
+```
+
+```{r}
+mtcars %>% 
+  as_tibble() %>%
+  .[["hp"]]
+```
+
+```{r}
+mtcars %>% 
+  as_tibble() %>%
+  select(hp) |> 
+  pull()
+```
+
+```{r}
+mtcars$hp
+```
+
+```{r}
+mtcars[["hp"]]
+```
+
+```{r}
+mtcars["hp"]
+```
+
+```{r}
+mtcars_tib <- mtcars |> 
+  as_tibble(rownames = "model")
+
+mtcars_tib
+```
+
+```{r}
+tib <- tibble(
+  x = 1:5,
+  y = seq(from = 2.5, by = 0.12, length.out = 5),
+  z = x + y^0.5,
+  # What does the next one do?
+  c = seq_along(y),
+  d = LETTERS[seq_along(y) + 10]
+)
+
+tib
+```
+
+```{r}
+#| eval: false
+df <- data.frame(
+  2002 = 23.22,
+  2003 = 12.02,
+  2004 = 27.61
+)
+```
+
+```{r}
+df <- data.frame(
+  `2002` = 23.22,
+  `2003` = 12.02,
+  `2004` = 27.61
+)
+```
+
+
+```{r}
+tib <- tibble(
+  `2002` = 23.22,
+  `2003` = 12.02,
+  `2004` = 27.61
+)
+```
+
+```{r}
+tib
+```
+
+```{r}
+df <- data.frame(
+  `2002` = 23.22,
+  `2003` = 12.02,
+  `2004` = 27.61
+)
+```
+
+```{r}
+df
+```
+
+```{r}
+tib <- tibble(
+  `2002` = 23.22,
+  `2003` = 12.02,
+  `2004` = 27.61
+)
+```
+
+```{r}
+tib
+```
+
+```{r}
+#| eval: false
+#| echo: true
+tib <- tibble(
+  2002 = 23.22, 
+  2003 = 12.02,
+  2004 = 27.61
+)
+```
+
+```{r}
+mtcars %>%
+  .$cyl %>% 
+  table()
+```
+
+```{r}
+mtcars  |> 
+  _$cyl |> 
+  table()
+```
+
+```{r}
+mtcars  |> 
+  _["cyl"] |> 
+  table()
+```
+
+```{r}
+mtcars  |> 
+  _[["cyl"]] |> 
+  table()
+```
+
+```{r}
+mtcars  |> 
+  as_tibble() |> 
+  _["cyl"] |> 
+  table()
+```
+
+```{r}
+# cases per 100.000
+table1 <- table1 %>% 
+  mutate(
+    rate = round((cases/population) * 100000,
+                 digits = 3)
+    )
+```
+
+```{r}
+table1 %>% 
+  count(year, wt = cases)
+```
+
+```{r}
+table1
+```
+
+```{r}
+table1 |> 
+  group_by(year) |> 
+  summarise(
+    sum_cases = sum(cases)
+  )
+```
+
+
+```{r}
+# Some changes from Wicham
+# embrace the pipe!
+table1 %>% 
+ggplot(mapping = aes(
+  x = parse_date(
+    as.character(year),
+    format = "%Y"
+    ),
+  y = rate,
+  colour = country
+  )
+  ) + 
+  geom_line(mapping = aes(group = country)) + 
+  geom_point() + 
+  xlab("Time") +
+  ylab("Rate per 100000") +
+  theme(legend.position = "bottom")
+```
+
+```{r}
+table4a 
+```
+
+
+```{r}
+tidy4a <- table4a %>% 
+  pivot_longer(cols = -country,
+               names_to = "year", 
+               values_to = "cases")
+tidy4a
+```
+
+Alternativ:
+
+```{r}
+tidy4a <- table4a %>% 
+  pivot_longer(cols = `1999`:`2000`,
+               names_to = "year", 
+               values_to = "cases")
+tidy4a
+```
+
+```{r}
+tidy4a <- table4a %>% 
+  pivot_longer(cols = 2:3,
+               names_to = "year", 
+               values_to = "cases")
+tidy4a
+```
+
+```{r}
+tidy4a <- table4a %>% 
+  pivot_longer(cols = -1,
+               names_to = "year", 
+               values_to = "cases")
+tidy4a
+```
+
+```{r}
+table4b
+```
+
+
+```{r}
+tidy4b <- table4b %>% 
+  pivot_longer(
+    cols = -country,
+    names_to = "year",
+    values_to = "pop"
+  )
+tidy4b
+```
+
+```{r}
+tidy4a
+```
+
+```{r}
+tidy4b
+```
+
+
+```{r}
+tidy4 <- tidy4a %>% 
+  left_join(tidy4b, by = c("country", "year"))
+tidy4
+```
+
+Alternativt (mer «up to date»):
+
+```{r}
+tidy4 <- tidy4a %>% 
+  left_join(tidy4b, by = join_by(country, year))
+tidy4
+```
+
+```{r}
+(tidy2 <- table2 %>% 
+  pivot_wider(names_from = type,
+              values_from = count))
+```
+
+```{r}
+#| paged.print: true
+engine: knitrknitr:  opts_chunk:    R.options:      width: 120
+table3
+```
+
+```{r}
+tidy3 <- table3 %>% 
+  separate(col = rate,
+           into = c("cases", "pop"),
+           sep = "/"
+           )
+tidy3
+```
+
+```{r}
+tidy3 <- table3 %>% 
+  separate(col = rate,
+           into = c("cases", "pop"),
+           sep = "/",
+           convert = TRUE
+           )
+
+tidy3
+```
+
+```{r}
+tidy3century <- tidy3 %>% 
+  separate(col = year,
+           into = c("century", "year"),
+           sep = 2,
+           convert = TRUE
+           )
+tidy3century
+```
+
+```{r}
+tidy3century %>% 
+  mutate(
+    year = as.character(year),
+    year = str_pad(year, width = 2, side = "left", pad = "0")
+  ) |> 
+  unite(
+    col = "year",
+    century, year, # the columns we want to unite
+    sep = "" # what happens witout sep?
+  )
+```
+
+```{r}
+stocks <- tibble(
+  year   = c(2015, 2015, 2015, 
+             2015, 2016, 2016, 2016),
+  qtr    = c(   1,    2,    3,    
+                4,    2,    3,    4),
+  return = c(1.88, 0.59, 0.35,
+             NA, 0.92, 0.17, 2.66)
+)
+stocks
+```
+
+```{r}
+stocks_wider <- stocks %>% 
+  pivot_wider(
+    names_from = year,
+    names_prefix = "y",
+    values_from = return
+    )
+stocks_wider
+```
+
+```{r}
+stocks_wider %>% 
+  pivot_longer(
+    cols = -qtr,
+    names_to = "year", # in quote since it does not exist yet
+    values_to = "return",
+    values_drop_na = TRUE
+  ) %>% 
+  arrange(year, qtr)
+```
+
+```{r}
+who <- tidyr::who
+```
+
+```{r}
+who$new_sp_m014
+```
+
+```{r}
+names(who)
+```
+
+
+
